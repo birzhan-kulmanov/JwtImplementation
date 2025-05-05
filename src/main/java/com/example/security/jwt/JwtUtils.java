@@ -50,13 +50,13 @@ public class JwtUtils {
         }
 
     // Getting Username from JWT Token
-//    public String getUsernameFromToken(String token) {
-//        return Jwts.parser()
-//                .verifyWith((SecretKey) key())
-//                .build().parseSignedClaims(token)
-//                .getPayload()
-//                .getSubject();
-//    }
+    public String getUsernameFromToken(String token) {
+        return Jwts.parser()
+                .verifyWith((SecretKey) key())
+                .build().parseSignedClaims(token)
+                .getPayload()
+                .getSubject();
+    }
     // Generate Signing key
     public Key key() {
         return Keys.hmacShaKeyFor(
